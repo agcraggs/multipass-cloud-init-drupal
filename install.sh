@@ -7,5 +7,6 @@ mkdir /home/ubuntu/cloud-config-drupal
 mkdir /home/ubuntu/cloud-config-drupal/install
 cp /run/cloud-config-drupal/install/install-user.sh /home/ubuntu/cloud-config-drupal/install/
 chown --recursive ubuntu /home/ubuntu/cloud-config-drupal
+chmod u+x /home/ubuntu/cloud-config-drupal/install/install-user.sh
 # Add install script to the ubuntu user .profile file so it can run on login
 sed -i -e '$a\\n#multipass-cloud-init-drupal\n$HOME/cloud-config-drupal/install/install-user.sh\n' /home/ubuntu/.profile
