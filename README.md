@@ -13,7 +13,7 @@ Host shell commands to pass the cloud-init metadata file `cloud-config-drupal.ya
 Instance shell commands to check on the logs:
 
 [Debugging cloud-init](https://cloudinit.readthedocs.io/en/latest/topics/debugging.html)  
-`sudo cloud-init status --long`
+`sudo cloud-init status --long`  
 `sudo cloud-init analyze show`  
 
 ## Cleanup
