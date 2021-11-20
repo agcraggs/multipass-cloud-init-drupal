@@ -12,6 +12,12 @@ if [ ! -f "$HOME/cloud-config-drupal/.cloud-config-drupal" ]; then
     BIN=$HOME/bin
 
 # ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+    echo PATH
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
     echo Composer
 wget --output-document=composer-setup.php https://getcomposer.org/installer
 php composer-setup.php --install-dir="$BIN" --filename=composer --quiet
