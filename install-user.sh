@@ -4,7 +4,7 @@ if [ ! -f "$HOME/cloud-config-drupal/.cloud-config-drupal" ]; then
   if [ -d "$HOME/cloud-config-drupal/install" ] ; then
     # Ready to install
     echo Starting: multipass-cloud-init-drupal
-    SITE_ID=hostname
+    SITE_ID=$(hostname)
     mkdir $HOME/cloud-config-drupal/setup
     cd $HOME/cloud-config-drupal/setup
     sudo usermod -a -G www-data ubuntu
@@ -163,6 +163,10 @@ rm /tmp/mycron
 
 # ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
     echo Finishing: multipass-cloud-init-drupal
+# ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
+    echo IP address
+
+echo $(ip -o -4 addr list enp0s1 | awk '{print $4}' | cut -d/ -f1)
   fi
 # Install complete
 touch "$HOME/cloud-config-drupal/.cloud-config-drupal"
