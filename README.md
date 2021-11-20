@@ -12,13 +12,13 @@ Host shell commands to pass the cloud-init metadata file `cloud-config-drupal.ya
 
 Instance shell commands to check on the logs
 
-`cloud-init status --long` 
-`cat /var/log/cloud-init.log` 
+`cloud-init status --long`  
+`cat /var/log/cloud-init.log`  
 
 ## Cleanup
 
 Host shell commands to clean up the instance `drupal-vm-01`
 
-`multipass stop drupal-vm-01` 
-`multipass delete drupal-vm-01` 
-`multipass purge` 
+`multipass stop drupal-vm-01`  
+`multipass delete drupal-vm-01`  
+`multipass purge`  
