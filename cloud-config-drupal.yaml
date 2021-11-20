@@ -31,6 +31,7 @@ runcmd:
   - [ mkdir, /run/cloud-config-drupal/install ]
   - [ cd, /run/cloud-config-drupal/install ]
   - [ wget, https://raw.githubusercontent.com/agcraggs/multipass-cloud-init-drupal/main/install.sh ]
-  - [ sh, install.sh ]
+  - [ wget, https://raw.githubusercontent.com/agcraggs/multipass-cloud-init-drupal/main/install-user.sh ]
+  - [ sh, install.sh ] 
 # Must escape commands with ,
 #  - [  ]
