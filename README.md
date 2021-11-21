@@ -43,6 +43,25 @@ The Drupal 9 installation is for development use has the following characteristi
 - Cron job is configured to run every 5 minutes (it uses drush cron)
 - Trusted host patterns are configured on the VM IP address
 
+## Post Drupal 9 Installation Developer Setup
+
+To facilitate ease of development on the host it is helpful to mount the relevant local directories inside the instance. Suggested multipass host shell mount commands post installation. Generic share directory:
+
+`multipass mount <source>/multipass/drupal01/share drupal01:/home/ubuntu/share`
+
+From the Drupal `README.txt`: You may create subdirectories in this directory `/var/www/drupal01/web/modules`, to organize your added modules, without breaking the site. Some common subdirectories include "contrib" for contributed modules, and "custom" for custom modules. Note that if you move a module to a subdirectory after it has been enabled, you may need to clear the Drupal cache so it can be found.
+
+There are number of directories that are ignored when looking for modules. These are 'src', 'lib', 'vendor', 'assets', 'css', 'files', 'images', 'js', 'misc', 'templates', 'includes', 'fixtures' and 'Drupal'.
+
+Common Drupal subdirectories:
+
+`multipass mount <source>/multipass/drupal01/contrib drupal01:/var/www/drupal01/web/modules/contrib`  
+`multipass mount <source>/multipass/drupal01/custom drupal01:/var/www/drupal01/web/modules/custom`
+
+Example "custom" Drupal 9 modules: To be placed into `<source>/multipass/drupal01/custom` on the host:
+
+[drupal-modules-custom](https://github.com/agcraggs/drupal-modules-custom)
+
 ## Cleanup
 
 Host shell commands to clean up the instance `drupal01`:
