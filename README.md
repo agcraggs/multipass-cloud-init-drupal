@@ -5,7 +5,7 @@
 ## Installation
 
 Install [Multipass](https://multipass.run)  
-Download this repository
+Download this repository  
 Follow Launch to create a VM instance
 
 ## Launch
