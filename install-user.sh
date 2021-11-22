@@ -166,7 +166,7 @@ rm /tmp/mycron
 # ---------- ---------- ---------- ---------- ---------- ---------- ---------- ----------
     echo IP address
 
-echo $(ip -o -4 addr list enp0s1 | awk '{print $4}' | cut -d/ -f1)
+ip -o -4 addr | awk '{print $4}'
   fi
 # Install complete
 touch "$HOME/cloud-config-drupal/.cloud-config-drupal"
