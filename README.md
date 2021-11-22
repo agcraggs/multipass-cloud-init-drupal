@@ -4,6 +4,7 @@
 
 ## Installation
 
+On Windows [enable Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v)  
 Install [Multipass](https://multipass.run)  
 Download this repository  
 Follow Launch to create a VM instance
@@ -43,9 +44,15 @@ The Drupal 9 installation is for development use has the following characteristi
 - Cron job is configured to run every 5 minutes (it uses drush cron)
 - Trusted host patterns are configured on the VM IP address
 
-## Post Drupal 9 Installation Developer Setup
+## Example Post Drupal 9 Installation Developer Setup
 
-To facilitate ease of development on the host it is helpful to mount the relevant local directories inside the instance. Suggested multipass host shell mount commands post installation. Generic share directory:
+To facilitate ease of development on the host it is helpful to mount the relevant local directories inside the instance. 
+
+On Windows mount is not enabled by default. To enable mount open a host administrator shell and run the following command to enable mount:
+
+`multipass set local.privileged-mounts=true`
+
+Suggested Multipass host shell mount commands post installation. Generic share directory:
 
 `multipass mount <source>/multipass/drupal01/share drupal01:/home/ubuntu/share`
 
